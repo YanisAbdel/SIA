@@ -68,3 +68,9 @@ Desktop.ini
 # --- Misc ---
 .tmp/
 temp/
+
+
+# --- Blobconverter outputs ---
+*.blob
+*.pt
+*.onnx
