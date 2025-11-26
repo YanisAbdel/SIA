@@ -1,0 +1,67 @@
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import LaserScan
+import math
+
+class ClosestPointNode(Node):
+    def __init__(self):
+        super().__init__('closest_point_node')
+        
+        # 1. Souscription au topic /scan 
+        self.subscription = self.create_subscription(
+            LaserScan,
+            '/scan',
+            self.scan_callback,
+            10)
+            
+        # 2. Publication sur /closest_point 
+        self.publisher_ = self.create_publisher(LaserScan, '/closest_point', 10)
+
+    def scan_callback(self, msg):
+        new_scan = LaserScan()
+        new_scan.header = msg.header
+        new_scan.angle_min = msg.angle_min
+        new_scan.angle_max = msg.angle_max
+        new_scan.angle_increment = msg.angle_increment
+        new_scan.time_increment = msg.time_increment
+        new_scan.scan_time = msg.scan_time
+        new_scan.range_min = msg.range_min
+        new_scan.range_max = msg.range_max
+        
+        # Initialiser à l'infini
+        new_scan.ranges = [float('inf')] * len(msg.ranges)
+        
+        # Vérifier combien de points sont valides 
+        valid_points = []
+        for i, r in enumerate(msg.ranges):
+            # On ignore les valeurs infinies, les zéros (erreurs) et les NaN
+            if r > msg.range_min and r < msg.range_max and r != float('inf') and r > 0.0:
+                valid_points.append((r, i)) # On garde la distance et l'index
+        
+        if not valid_points:
+            
+            self.get_logger().warn(f"Aucun point valide détecté ! (Points bruts reçus: {len(msg.ranges)})")
+            self.publisher_.publish(new_scan)
+            return
+
+        # Trouver le minimum parmi les points valides
+        # On trie la liste par distance (le premier élément du tuple)
+        min_distance, min_index = min(valid_points, key=lambda x: x[0])
+        
+        # On affiche ce qu'on a trouvé 
+        self.get_logger().info(f"Obstacle le plus proche : {min_distance:.2f}m à l'index {min_index}")
+
+        # On écrit la valeur dans le nouveau scan
+        new_scan.ranges[min_index] = min_distance
+        
+        self.publisher_.publish(new_scan)
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = ClosestPointNode()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
