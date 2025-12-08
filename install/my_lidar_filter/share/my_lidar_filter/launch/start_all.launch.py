@@ -18,7 +18,6 @@ def generate_launch_description():
     )
 
     # 3. On définit le lancement du nœud (le filtre Lidar)
-    # Assure-toi que 'package' est le nom de ton dossier et 'executable' celui défini dans setup.py
     lidar_filter_node = Node(
         package='my_lidar_filter',
         executable='filter',
