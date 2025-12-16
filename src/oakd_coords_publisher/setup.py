@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'vision_obstacle_detection'
+package_name = 'oakd_coords_publisher'
 
 setup(
     name=package_name,
@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-        	'camera_inference = vision_obstacle_detection.camera_inference_node:main',
+        	'oak_coords = oakd_coords_publisher.oakd_publisher:main',
         ],
     },
 )
