@@ -13,14 +13,14 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     
     # CHEMIN VERS LE URDF
-    urdf_file_path = '/home/saif/turtlebot3_ws/src/Turtlebot3/projects/turtlebot3_descriptions/urdf/turtlebot3_burger_oak_d_pro.urdf'
+    urdf_file_path = '/home/kamel/turtlebot3_ws/src/Turtlebot3/projects/turtlebot3_descriptions/urdf/turtlebot3_burger_oak_d_pro.urdf'
 
     # 3. Lecture du fichier URDF
     with open(urdf_file_path, 'r') as infp:
         robot_desc = infp.read()
 
     # 4. Chemin vers ton monde
-    world_file = '/home/saif/turtlebot3_ws/src/Turtlebot3/turtlebot3_gazebo/worlds/my_room.world'
+    world_file = '/home/kamel/turtlebot3_ws/src/Turtlebot3/turtlebot3_gazebo/worlds/my_room.world'
 
     # --- GESTION DES MODÈLES ---
     downloaded_models_path = os.path.expanduser('~/.ignition/fuel/fuel.gazebosim.org/openrobotics/models')
@@ -73,7 +73,7 @@ def generate_launch_description():
             '/depth_camera/image/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked',
             '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
             '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
-            '/tf@tf2_msgs/msg/TFMessage[gz.msgs.TFMessage',
+            '/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
             '/tf_static@tf2_msgs/msg/TFMessage[gz.msgs.TFMessage',
             '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
         ],
@@ -92,13 +92,13 @@ def generate_launch_description():
 
     # 9. --- AJOUT CRUCIAL : PONT TF CAMÉRA ---
     # Remplace la commande manuelle du Terminal 2
-    camera_tf = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        arguments = ['0', '0', '0.', '0', '0', '0', 'oak_d_pro_depth_optical_frame', 'turtlebot3_burger_oak_d_pro/base_footprint/depth_camera'],
-        parameters=[{'use_sim_time': True}],
-        output='screen'
-    )
+   # camera_tf = Node(
+       # package='tf2_ros',
+      #  executable='static_transform_publisher',
+     #   arguments = ['0', '0', '0.', '0', '0', '0', 'oak_d_pro_depth_optical_frame', 'turtlebot3_burger_oak_d_pro/base_footprint/depth_camera'],
+    #    parameters=[{'use_sim_time': True}],
+    #    output='screen'
+    #)
     # -----------------------------------------
 
     # 10. RViz
@@ -117,6 +117,6 @@ def generate_launch_description():
         robot_state_publisher,
         spawn,
         bridge,
-        camera_tf,  # <--- Ne pas oublier de l'ajouter ici
+       # camera_tf,  # <--- Ne pas oublier de l'ajouter ici
         rviz
     ])
