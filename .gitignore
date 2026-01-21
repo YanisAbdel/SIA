@@ -1,76 +1,33 @@
-# --- System files ---
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# --- ROS (TRÈS IMPORTANT) ---
+# On ignore les dossiers de build pour que le prof compile lui-même
+build/
+devel/
+install/
+log/
+.catkin_workspace
+.catkin_tools/
+**/build/
+**/devel/
+**/install/
+**/log/
+
+# --- IDE & SYSTÈME ---
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
 
-# --- Python ---
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.pdb
-*.egg-info/
-.eggs/
-build/
-dist/
-.env
-.venv
-venv/
-ENV/
-
-# --- Jupyter ---
-.ipynb_checkpoints/
-
-# --- Node.js ---
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# --- VS Code ---
-.vscode/
-.history/
-
-# --- Logs ---
+# --- LOGS ET MÉDIAS ---
 *.log
-logs/
-*.out
-
-# --- Environment / Secrets ---
-*.env
-*.env.local
-*.env.*.local
-
-# --- OS generated ---
-Desktop.ini
-
-# --- Archives ---
-*.zip
-*.tar
-*.tar.gz
-*.rar
-
-# --- Compiled ---
-*.o
-*.so
-*.dll
-*.exe
-
-# --- Images auto-generated ---
-*.png
+*.mp4
+*.avi
 *.jpg
 *.jpeg
-*.gif
-
-# --- IDE ---
-.idea/
-*.iml
-
-# --- Misc ---
-.tmp/
-temp/
-
-
-# --- Blobconverter outputs ---
-*.blob
-*.pt
-*.onnx
+*.png

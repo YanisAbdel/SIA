@@ -1,0 +1,25 @@
+
+===================================================
+        RAPPORT FINAL DE BENCHMARK IA
+===================================================
+Source des données : MATÉRIELLE (Sonde USB)
+
+1. PERFORMANCES PURES
+---------------------
+FPS Moyen       : 1.88 fps
+Latence Moyenne : 531.40 ms
+
+2. THERMIQUE
+------------
+Temp. Idle      : 50.4 °C
+Temp. Charge    : 81.6 °C
+Augmentation    : +31.3 °C
+
+3. ÉNERGIE & EFFICACITÉ
+-----------------------
+Conso Idle      : 2.50 W
+Conso Charge    : 5.57 W
+DELTA IA        : 3.07 W  (Coût énergétique spécifique de l'IA)
+
+EFFICACITÉ GLOBALE : 0.34 FPS/Watt
+===================================================

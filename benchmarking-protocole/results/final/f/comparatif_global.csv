@@ -1,0 +1,4 @@
+Device,FPS_Moyen,Latence_ms,Temp_Charge_C,Conso_Charge_W,Efficacite_FPS_per_W
+Raspberry Pi 4,1.88,531.4,81.6,5.57,0.34
+Jetson Orin Nano,33.84,29.57,58.0,7.02,4.82
+PC Portable (Nvidia),112.19,10.75,45.7,13.38,8.39

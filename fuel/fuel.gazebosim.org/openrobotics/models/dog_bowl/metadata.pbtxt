@@ -1,0 +1,34 @@
+model {
+  file: "model.sdf"
+}
+name: "Top_Paw_Dog_Bow_Bone_Ceramic_13_fl_oz_total"
+description: "Top Paw Dog Bow, Bone, Ceramic - 13 fl oz total"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Top Paw"
+}
+annotations {
+  key: "gtin"
+  value: "00737257514058"
+}
+annotations {
+  key: "sku"
+  value: "00737257514058"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+}
