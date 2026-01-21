@@ -13,14 +13,14 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     
     # CHEMIN VERS LE URDF
-    urdf_file_path = '/home/kamel/turtlebot3_ws/src/Turtlebot3/projects/turtlebot3_descriptions/urdf/turtlebot3_burger_oak_d_pro.urdf'
+    urdf_file_path = '~/turtlebot3_ws/src/Turtlebot3/projects/turtlebot3_descriptions/urdf/turtlebot3_burger_oak_d_pro.urdf'
 
     # 3. Lecture du fichier URDF
     with open(urdf_file_path, 'r') as infp:
         robot_desc = infp.read()
 
     # 4. Chemin vers ton monde
-    world_file = '/home/kamel/turtlebot3_ws/src/Turtlebot3/turtlebot3_gazebo/worlds/my_room.world'
+    world_file = '~/turtlebot3_ws/src/Turtlebot3/turtlebot3_gazebo/worlds/my_room.world'
 
     # --- GESTION DES MODÈLES ---
     downloaded_models_path = os.path.expanduser('~/.ignition/fuel/fuel.gazebosim.org/openrobotics/models')
