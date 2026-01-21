@@ -153,6 +153,10 @@ python3 inf_sim/inf_sim/navigator.py --ros-args -p use_sim_time:=true
 
 Tourner le robot (via un teleop ou en lui donnant des Nav2 Goal) pour qu'il explore la maison.
 
+```Bash
+ros2 run turtlebot3_teleop teleop_keyboard
+```
+
 Dès que la caméra voit un objet (Trash, Bicycle...), il apparaîtra dans la liste du Terminal 6 :
 
 ```Plaintext
