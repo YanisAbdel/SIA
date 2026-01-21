@@ -13,18 +13,18 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     
     # CHEMIN VERS LE URDF
-    urdf_file_path = '~/turtlebot3_ws/src/Turtlebot3/projects/turtlebot3_descriptions/urdf/turtlebot3_burger_oak_d_pro.urdf'
+   urdf_file_path = os.path.expanduser('~/src/Turtlebot3/projects/turtlebot3_descriptions/urdf/turtlebot3_burger_oak_d_pro.urdf')
 
     # 3. Lecture du fichier URDF
     with open(urdf_file_path, 'r') as infp:
         robot_desc = infp.read()
 
     # 4. Chemin vers ton monde
-    world_file = '~/turtlebot3_ws/src/Turtlebot3/turtlebot3_gazebo/worlds/my_room.world'
+    world_file = os.path.expanduser('~/src/Turtlebot3/turtlebot3_gazebo/worlds/my_room.world')
 
     # --- GESTION DES MODÈLES ---
     downloaded_models_path = os.path.expanduser('~/.ignition/fuel/fuel.gazebosim.org/openrobotics/models')
-    local_models_path = os.path.expanduser('~/turtlebot3_ws/src/Turtlebot3/turtlebot3_gazebo/models')
+    local_models_path = os.path.expanduser('~/src/Turtlebot3/turtlebot3_gazebo/models')
     all_models_paths = f"{downloaded_models_path}:{local_models_path}"
     set_res_path = SetEnvironmentVariable(name='IGN_GAZEBO_RESOURCE_PATH', value=all_models_paths)
     # ---------------------------
@@ -90,7 +90,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 9. --- AJOUT CRUCIAL : PONT TF CAMÉRA ---
+
     # Remplace la commande manuelle du Terminal 2
    # camera_tf = Node(
        # package='tf2_ros',
@@ -117,6 +117,6 @@ def generate_launch_description():
         robot_state_publisher,
         spawn,
         bridge,
-       # camera_tf,  # <--- Ne pas oublier de l'ajouter ici
+       # camera_tf,  
         rviz
     ])
