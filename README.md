@@ -133,11 +133,8 @@ Lance l'interface de commande. C'est ici que vous contrôlez le robot.
 python3 src/inf_sim/inf_sim/navigator.py --ros-args -p use_sim_time:=true
 ```
 ### Utilisation
-Dans le Terminal 6, le script affichera : ATTENTE LOCALISATION ROBOT....
 
-Utilisez le bouton "2D Pose Estimate" dans RViz (ouvert par Nav2) pour indiquer au robot où il se trouve sur la carte (si la localisation automatique ne se fait pas).
-
-Déplacez le robot (via un teleop ou en lui donnant des Nav2 Goal) pour qu'il explore la maison.
+Tourner le robot (via un teleop ou en lui donnant des Nav2 Goal) pour qu'il explore la maison.
 
 Dès que la caméra voit un objet (Trash, Bicycle...), il apparaîtra dans la liste du Terminal 6 :
 
