@@ -65,13 +65,18 @@ Installez les librairies nécessaires pour YOLO et la vision :
 pip3 install ultralytics opencv-python numpy
 
 ```
-4. Installation du Workspace
+4. Nettoyage (Optionnel mais recommandé)
+
+```Bash
+rm -rf build/ install/ log/
+```
+5. Installation du Workspace
 ```Bash
 
 mkdir -p ~/turtlebot3_ws/src
 cd ~/turtlebot3_ws/src
 # Clonez ce dépôt ici
-git clone <VOTRE_LIEN_GIT> .
+git clone https://github.com/YanisAbdel/SIA .
 cd ..
 colcon build --symlink-install
 source install/setup.bash
