@@ -73,11 +73,10 @@ rm -rf build/ install/ log/
 5. Installation du Workspace
 ```Bash
 
-mkdir -p ~/turtlebot3_ws/src
-cd ~/turtlebot3_ws/src
+mkdir -p ~/turtlebot3_ws
+cd ~/turtlebot3_ws
 # Clonez ce dépôt ici
 git clone https://github.com/YanisAbdel/SIA .
-cd ..
 colcon build --symlink-install
 source install/setup.bash
 ```
