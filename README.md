@@ -93,6 +93,18 @@ Lance le monde, le robot, et le pont ROS-Gazebo.
 
 ros2 launch turtlebot3_gazebo start_oakd_world.launch.py
 ```
+### Note importante pour la première installation : Il est normal que la simulation ne charge pas correctement les modèles (caméra OAK-D, objets) lors du tout premier lancement.
+
+Le premier démarrage sert à créer automatiquement le dossier de configuration caché ~/.ignition sur votre machine. Une fois ce dossier créé (même si la simulation a échoué ou manque d'objets), coupez la simulation (Ctrl+C) et copiez le dossier fuel du projet vers ce répertoire :
+```Bash
+
+cp -r fuel/ ~/.ignition/fuel
+```
+relancer la commande :
+```Bash
+
+ros2 launch turtlebot3_gazebo start_oakd_world.launch.py
+```
 Attendez que Gazebo s'ouvre et que le robot apparaisse.
 
 Terminal 2 : SLAM (Cartographer)
