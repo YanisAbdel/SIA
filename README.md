@@ -119,7 +119,7 @@ Lance le nœud d'inférence qui analyse les images de la caméra.
 
 ```Bash
 
-python3 src/inf_sim/inf_sim/inference_node.py --ros-args -p use_sim_time:=true
+python3 inf_sim/inf_sim/inference_node.py --ros-args -p use_sim_time:=true
 ```
 Une fenêtre "IA Vision" doit s'ouvrir montrant ce que voit le robot.
 
@@ -128,7 +128,7 @@ Lance le nœud qui place les markers (sphères colorées) sur la carte.
 
 ```Bash
 
-python3 src/inf_sim/inf_sim/object_mapper.py --ros-args -p use_sim_time:=true
+python3 inf_sim/inf_sim/object_mapper.py --ros-args -p use_sim_time:=true
 ```
 Terminal 5 : Navigation Stack (Nav2)
 Active le système de navigation autonome.
@@ -146,7 +146,7 @@ Lance l'interface de commande. C'est ici que vous contrôlez le robot.
 
 ```Bash
 
-python3 src/inf_sim/inf_sim/navigator.py --ros-args -p use_sim_time:=true
+python3 inf_sim/inf_sim/navigator.py --ros-args -p use_sim_time:=true
 ```
 ### Utilisation
 
