@@ -77,7 +77,7 @@ mkdir -p ~/turtlebot3_ws
 cd ~/turtlebot3_ws
 # Clonez ce dépôt ici
 git clone https://github.com/YanisAbdel/SIA .
-cd /src
+cd src/
 colcon build --symlink-install
 source install/setup.bash
 ```
@@ -98,7 +98,7 @@ ros2 launch turtlebot3_gazebo start_oakd_world.launch.py
 Le premier démarrage sert à créer automatiquement le dossier de configuration caché ~/.ignition sur votre machine. Une fois ce dossier créé (même si la simulation a échoué ou manque d'objets), coupez la simulation (Ctrl+C) et copiez le dossier fuel du projet vers ce répertoire :
 ```Bash
 
-cp -r fuel/ ~/.ignition/fuel
+cp -r fuel/ ~/.ignition
 ```
 relancer la commande :
 ```Bash
