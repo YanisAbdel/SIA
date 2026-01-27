@@ -11,7 +11,7 @@ import sys
 # --- CONFIGURATION (À MODIFIER POUR TA PI) ---
 # Mets le chemin ABSOLU où tu vas poser le fichier .blob sur la Pi
 # Exemple : "/home/pi/ros2_ws/src/mon_package/models/best.blob"
-BLOB_PATH_HARDCODED = "/home/pi/best.blob" 
+BLOB_PATH_HARDCODED = "/home/turtlebot2/best.blob" 
 
 # --- FONCTION DE DÉCODAGE (Host-Side) ---
 def decode_yolov8(output_tensor, conf_thres=0.5, iou_thres=0.5):
